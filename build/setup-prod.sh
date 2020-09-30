@@ -2,6 +2,7 @@
 echo "Setting up Production Connection..."
 mkdir keys
 echo $SFDC_SERVER_KEY | base64 -di > keys/server.key
+echo "server key..."     
 echo $SFDC_SERVER_KEY
 # Authenticate to salesforce    
 echo "Authenticating..."     
