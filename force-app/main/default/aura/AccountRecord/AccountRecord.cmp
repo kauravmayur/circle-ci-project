@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="Accounts" type="Account"/>
+    
+    <tbody>
+            <tr aria-selected="false" class="slds-hint-parent">
+              
+              <th scope="row">
+                <div class="slds-truncate" title="{!v.Accounts.Id}">
+                  <a href="javascript:void(0);" tabindex="0">{!v.Accounts.Id}</a>
+                </div>
+              </th>
+              <td role="gridcell">
+                <div class="slds-truncate" title="{!v.Accounts.Name}">{!v.Accounts.Name}</div>
+              </td>
+              <td role="gridcell">
+                <div class="slds-truncate" title="{!v.Accounts.Phone}">{!v.Accounts.Phone}</div>
+              </td>
+            </tr>
+          </tbody>
+</aura:component>

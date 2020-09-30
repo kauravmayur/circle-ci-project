@@ -1,0 +1,62 @@
+<apex:page controller="MyController">
+    <apex:form >
+    <script>
+        function CallJavaScript(){
+            //alert('TEst');
+            saveRecord();
+        }
+    </script>
+        <apex:pageBlock >
+            <!--
+            <apex:selectList value="{!selectedItems}"  size="1" onchange="CallJavaScript()">
+                <apex:selectOptions value="{!items}" />
+            </apex:selectList>
+            -->
+            <apex:actionFunction name="saveRecord" action="{!Save}" reRender="panal1,panal2"/>
+            
+            <apex:outputPanel id="panal1">
+            
+                
+                <apex:selectList value="{!selectedItems}"  size="1" onchange="CallJavaScript()">
+                    
+                    <apex:selectOptions value="{!items}" />
+                </apex:selectList>
+                <apex:outputText value="{!selectedItems}"/>
+                
+                
+                
+            </apex:outputPanel>
+            <apex:outputPanel id="panal2">
+                <apex:selectList value="{!selectedItems2}"  size="1" >
+                    <apex:actionSupport event="onchange" action="{!Save}" reRender="panal2">
+                        <apex:param name="selected" value="" />
+                    </apex:actionSupport>
+                    <apex:selectOptions value="{!items2}" />
+                </apex:selectList>
+            <apex:outputText value="{!selectedItems2}"/>
+            </apex:outputPanel>
+                
+              <!--
+            <apex:outputPanel id="panal1">
+            
+                
+                <apex:selectList value="{!selectedItems}"  size="1">
+                    <apex:actionSupport event="onchange" action="{!Save}" reRender="panal1"/>
+                    <apex:selectOptions value="{!items}" />
+                </apex:selectList>
+                <apex:outputText value="{!selectedItems}"/>
+                
+                
+                <apex:outputText value="{!selectedItems}"/>
+            </apex:outputPanel>
+            <apex:outputPanel id="panal2">
+                <apex:selectList value="{!selectedItems2}"  size="1" >
+                    <apex:actionSupport event="onchange" action="{!Save}" reRender="panal2"/>
+                    <apex:selectOptions value="{!items2}" />
+                </apex:selectList>
+            <apex:outputText value="{!selectedItems2}"/>
+            </apex:outputPanel>
+            -->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

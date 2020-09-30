@@ -1,0 +1,88 @@
+<aura:component controller="ListComponentCntrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+    <aura:attribute name="data" type="Contact[]" />  
+    <aura:attribute name="UnfilteredData" type="Contact[]" />  
+    <aura:attribute name="filter" type="String" />  
+    <aura:handler name="change" value="{!v.filter}" action="{!c.doFilter}" />  
+    <div class="slds-page-header">My Contacts</div>  
+    <lightning:input name="x" value="{!v.filter}" label="Filter" placeholder="Search Contact by "/>  
+    <table class="slds-table slds-table--bordered">  
+        <thead>  
+            <tr>  
+                <th>Id</th>  
+                <th>Name</th>  
+                <th>Email</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <aura:iteration items="{!v.data}" var="row" indexVar="rowIndex">  
+                <tr>  
+                    <td>{!row.Id}</td>  
+                    <td>{!row.Name}</td>  
+                    <td>{!row.Email}</td>  
+                </tr>  
+            </aura:iteration>  
+        </tbody>  
+    </table>   
+    
+    <!--
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    
+    <aura:attribute name="options" type="String[]" default="Home,Profile, logout"/>
+    <div class="slds-text-heading_medium" style="padding-left: 100px;">
+        <a class="slds-button slds-button_brand" title="Mario Charpentier" href="javascript:void(0);" style="border-radius: 25px;border-color: rgb(212, 212, 212)!important;background-color: rgb(212, 212, 212)!important;color: rgb(0, 0, 0)!important;height: 30px;width: 30px;">
+            <div class="slds-text-title_caps">
+                
+                <ui:menu class="slds-dropdown__list">
+                    <ui:menuTriggerLink class="slds-dropdown__list" aura:id="trigger" label="MC"/>
+                    <ui:menuList  class="actionMenu" aura:id="actionMenu">
+                        <aura:iteration items="{!v.options}" var="itemLabel">
+                            <ui:actionMenuItem class="slds-dropdown__list" aura:id="actionMenuItem" label="{!itemLabel}" click="{!c.onProfileClick}"/>
+                        </aura:iteration>
+                    </ui:menuList>
+                </ui:menu>
+            </div>
+        </a>
+    </div>
+    
+    <div class="slds-text-heading_medium" style="padding-left: 100px;">
+        <a class="slds-button slds-button_brand" title="Mario Charpentier" href="javascript:void(0);" style="border-radius: 25px;border-color: rgb(212, 212, 212)!important;background-color: rgb(212, 212, 212)!important;color: rgb(0, 0, 0)!important;height: 30px;width: 30px;">
+            <div class="slds-text-title_caps">
+                
+                <ui:menu class="slds-dropdown__list">
+                    <ui:menuTriggerLink class="slds-dropdown__list" aura:id="trigger" label="MC"/>
+                    <ui:menuList  class="actionMenu" aura:id="actionMenu">
+                        <aura:iteration items="{!v.options}" var="itemLabel">
+                            <lightning:menuItem class="slds-dropdown__list" aura:id="actionMenuItem" label="{!itemLabel}" checked="{!c.onProfileClick}"/>
+                        </aura:iteration>
+                    </ui:menuList>
+                </ui:menu>
+            </div>
+        </a>
+    </div>
+    
+    <aura:attribute name="Txt" type="String" default=""/>
+    <div class="slds-box slds-theme_default">
+        This is component 1.<br/><br/>
+        <lightning:input type="text" value="{!v.Txt}" label="Enter Text : "/><br/><br/>
+     <lightning:button variant="brand" label="Navigate" onclick="{!c.navigateToComTwo}"/>
+    </div>
+-->
+    <!--
+    <div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+-->
+</aura:component>

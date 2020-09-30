@@ -1,0 +1,6 @@
+<aura:component controller="fetchPicklistOptsController">
+    <aura:attribute name="option" type="list"/>
+    <aura:attribute name="select" type="string"/>
+    <aura:attribute name="objectInfo" type="Account"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+</aura:component>

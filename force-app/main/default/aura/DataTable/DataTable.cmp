@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="dataTableCtrl">
+    <aura:attribute name="listOfAllAccounts" type="List"/>
+  
+    <aura:handler name="init" value="{! this }" action="{! c.doinit }"/>
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+        <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Account Id">Account Id</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                </tr>
+                
+        </thead>
+        <aura:iteration items="{!v.listOfAllAccounts}" var="obj">
+            <c:AccountRecord Accounts="{!obj}"/>    
+        </aura:iteration>
+    </table>
+</aura:component>

@@ -1,0 +1,5 @@
+<apex:component >
+    <apex:attribute name="textValue" description="Enter text value" type="string"/>
+    <apex:attribute name="color" description="add text color" type="string"/>
+    <apex:outputText value="{!textValue}" style="color:{!color}"/> 
+</apex:component>

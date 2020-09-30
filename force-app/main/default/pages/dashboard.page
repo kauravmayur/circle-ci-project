@@ -1,0 +1,43 @@
+<apex:page standardController="Account" extensions="CustomAccount">
+    <apex:form id="form">
+    <script>
+        function callAction(a){
+            alert(a);
+            callAction1(a);
+        }
+    </script>
+    
+    <apex:actionFunction name="callAction1" action="{!updateProgress}" reRender="abc">
+        <apex:param value="" name="recordName"/>
+        <apex:param value="" name="customId"/>
+    </apex:actionFunction>
+    
+    <apex:pageBlock title="Account Information" id="block">
+            <apex:pageBlockTable value="{!PrintAccounts}" var="accountRow" id="table">
+                <apex:column id="AccountId" value="{!accountRow.Id}"/>
+                <apex:column id="AccountName" value="{!accountRow.Name}"/>  
+                <apex:column headerValue="Contacts">
+                    <apex:repeat value="{!accountRow.Contacts}" var="contact">
+                        <apex:outputText value="{!contact.LastName}"/>
+                        <br />
+                    </apex:repeat>
+                </apex:column> 
+                
+                <apex:column title="Action">
+                    <apex:outputLink onclick="callAction1('{!accountRow.Name}', '{!accountRow.Id}')" >Update</apex:outputLink>
+                    
+                    <!--
+                    <apex:commandLink action="{!updateProgress}" value="Update" rerender="true">
+        
+                        <apex:param name="recordId" value="{!accountRow.id}" assignTo="{!customId}"/>
+                
+                        <apex:param name="recordName" value="{!accountRow.Name}" assignTo="{!recordName}"/>
+            
+                     </apex:commandLink>
+                    -->
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:inlineEditSupport />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

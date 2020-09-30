@@ -1,0 +1,29 @@
+<aura:component >
+    <lightning:accordion aura:id="accordion" activeSectionName="leave_and_attendance">
+        <lightning:accordionSection name="leave_and_attendance" label="Leave and Attendance">
+            <lightning:verticalNavigation selectedItem="recent" compact="true">
+                <lightning:verticalNavigationSection label="Reports">
+                    <lightning:verticalNavigationItem label="Leave Request" name="leaveRequest" />
+                    <lightning:verticalNavigationItem label="OnSite Attendance Request" name="onSiteAttendanceRequest" />
+                    <lightning:verticalNavigationItem label="Office Time Request" name="officeTimeRequest" />
+                    <lightning:verticalNavigationItem label="Late Exempt Request" name="lateExemptRequest" />
+                    <lightning:verticalNavigationItem label="Office Time For Team" name="officeTimeForTeam" />
+                    <lightning:verticalNavigationItem label="Mark Attendance" name="markAttendance" />
+                    <lightning:verticalNavigationItem label="Leave Calendar" name="leaveCalendar" />
+                    <lightning:verticalNavigationItem label="Officially Out Request" name="officiallyOutRequest" />
+                    <lightning:verticalNavigationItem label="Work From Home Request" name="workFromHomeRequest" />
+                </lightning:verticalNavigationSection>
+            </lightning:verticalNavigation>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="B" label="Accordion Title B">
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="C" label="Accordion Title C">
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+        </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

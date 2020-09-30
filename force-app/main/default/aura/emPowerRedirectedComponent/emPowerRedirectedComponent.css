@@ -1,0 +1,6 @@
+.THIS .gradient {
+  height: 40px;
+  background-image: linear-gradient(to bottom, rgb(194,232,255), rgb(150,186,221)); /* Standard syntax (must be last) */
+  border-bottom: 2px solid rgb(29,81,137);
+  padding-top: 40px;
+}

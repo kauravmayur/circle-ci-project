@@ -1,0 +1,5 @@
+<apex:page >
+  <c:textColor textValue="This is Red Color" color="Red"/><br/>
+  <c:textColor textValue="This is blue Color" color="blue"/><br/>
+  <c:textColor textValue="This is Green Color" color="Green"/>
+</apex:page>

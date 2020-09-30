@@ -1,0 +1,103 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="inlineEditCtrl">
+<!-- attributes -->
+<aura:attribute name="data" type="Object"/>
+<aura:attribute name="columns" type="List"/>
+<aura:attribute name="errors" type="Object" default="[]"/>
+<aura:attribute name="draftValues" type="Object" default="[]"/>
+<aura:attribute name="spinner" type="boolean" default="false"/>
+
+
+<aura:attribute name="listOfAllObjects" type="List"/>
+<aura:attribute name="options" type="object[]" />
+<aura:attribute name="values" type="List" />
+
+
+<aura:handler name="init" value="{! this }" action="{! c.doinit }"/>
+<!--loading spinner start-->
+<aura:if isTrue="{!v.spinner}">
+    <div aura:id="spinnerId" class="slds-spinner_container">
+        <div class="slds-spinner--brand  slds-spinner slds-spinner--medium slds-is-relative" role="alert">
+            <span class="slds-assistive-text">Loading...</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+</aura:if>
+
+<!-- Loading spinner end--> 
+<div class="slds-grid slds-grid_vertical">
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account" title="Default">
+                        <lightning:icon iconName="standard:default" size="medium" />
+                       
+                        <span class="slds-assistive-text">Object</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        
+                        <span>Default</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-text-heading_medium">Find me a Object!</div>
+        </div>
+    </article>
+    <div class="slds-p-left_large">
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_6-of-12">
+            <div class="slds-grid slds-gutters">
+                                
+                <lightning:select aura:id="sObjects" name="select" label="All Objects" required="false">
+                    <aura:iteration items="{!v.listOfAllObjects}" var="object">
+                            <option text="{!object}" value="{!object}"></option>
+                        </aura:iteration>
+                </lightning:select>
+                <div class="slds-col" style="margin-top: 20px;">
+                    <lightning:button variant="brand" label="Select Object" title="Select Object" onclick="{!c.handleClick }" />
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_6-of-12">
+                <lightning:dualListbox name="multipleOptions"  
+                    label= "Select Options" 
+                    sourceLabel="Available" 
+                    selectedLabel="Selected" 
+                    options="{!v.options}" 
+                    value="{!v.values}" 
+                    onchange="{! c.handleChange }"/>
+        </div>
+        <div class="slds-col slds-size_12-of-12">
+            
+
+            <div class="slds-p-around_medium">
+                <h1 class="slds-text-heading_large">Inline edit playground</h1>
+            </div>
+
+            <!-- the container element determine the height of the datatable -->
+            <div style="height: 300px">
+                <lightning:datatable
+                    columns="{! v.columns }"
+                    data="{! v.data }"
+                    keyField="id"
+                    errors="{! v.errors }"
+                    draftValues="{! v.draftValues }"
+                    onsave="{! c.handleSaveEdition }"
+                />
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div class="slds-col">
+        <span></span>
+    </div>
+    
+</div>
+</aura:component>

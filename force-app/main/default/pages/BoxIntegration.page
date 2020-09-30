@@ -1,0 +1,10 @@
+<apex:page controller="BoxTestFileUpload" id="thePage" docType="html-5.0">
+    <apex:form >
+    <apex:commandButton action="{!requestcode}" value="requestcode"/>
+    <br/>
+        <apex:outputLabel >Attachment</apex:outputLabel>  <br/>
+        <apex:inputFile value="{!AttchBody}" filename="{!AttchName}" id="file"  />  <br/> <br/>
+        
+        <apex:commandButton id="AddAtt" value="Add File" action="{!uploadFileToBox}" />
+    </apex:form>
+</apex:page>

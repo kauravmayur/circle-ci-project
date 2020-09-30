@@ -1,0 +1,163 @@
+<aura:component controller="HrAppController">
+    <aura:attribute name="leave" type="Leave__c" />
+    <aura:attribute name="account" type="Account" />
+    <aura:attribute name="startDate" type="date" />
+    <aura:attribute name="user" type="User" />
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'First Half', 'value': 'firstHalf'},
+                                                        {'label': 'Second Half', 'value': 'secondHalf'}
+                                                        ]"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+            <div class="slds-text-align_left slds-p-top_xx-small">Select Employee</div>
+        </div>
+        <div class="slds-col slds-size_4-of-12 slds-p-around_small" >
+            <lightning:input variant="label-hidden" name="input5" disabled="true" value="{!v.user.Name}" label="Disabled text field with a predefined value" />
+        </div>
+        <div class="slds-col slds-size_6-of-12"></div>
+        
+        
+        
+        
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+            <div class="slds-text-align_left slds-p-top_xx-small">Request Date</div>
+        </div>
+        <div class="slds-col slds-size_3-of-12 slds-p-around_small">
+            <lightning:input type="date" disabled="true" name="input2" label="Date field with a predefined value" value="30-Jun-2020"/>
+        </div>
+        <div class="slds-col slds-size_3-of-12 slds-p-around_small"></div>
+        <div class="slds-col slds-size_4-of-12 slds-p-around_small">
+            <button class="slds-button slds-button_outline-brand">Show Flexi Weekends</button>
+        </div>
+        
+        
+        
+        
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+            <div class="slds-text-align_left">
+                <div class="slds-text-align_left slds-p-top_xx-small">
+                    <span>Start Date </span>
+                    <span class="Mandatory">* </span>    
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_3-of-12 slds-p-around_small">
+            <lightning:input type="date" value="{!v.startDate}" required="true" name="input2" label="Date field with a predefined value"/>
+        </div>
+        <div class="slds-col slds-size_1-of-12"></div>
+        <div class="slds-col slds-size_1-of-12 slds-p-around_small ">
+            <div class="slds-text-align_left slds-p-top_xx-small">Half day</div>
+        </div>
+        <div class="slds-col slds-size_1-of-12"></div>
+        <div class="slds-col slds-size_4-of-12 slds-p-around_small">
+            <div class="slds-grid slds-p-top_xx-small">
+                <div class="slds-col slds-p-top_xx-small">
+                    <ui:inputCheckbox aura:id="checkbox" change="{!c.onCheck}"/>
+                </div>
+                <div class="slds-col gridClass">
+                    <lightning:radioGroup name="radioButtonGroupRequired"
+                                          label="Radio Button Group"
+                                          options="{! v.options }"
+                                          value="{! v.value }"
+                                          type="button"
+                                          required="true"/>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+            <div class="slds-text-align_left">
+                <div class="slds-text-align_left slds-p-top_xx-small">
+                    <span>End Date </span>
+                    <span class="Mandatory">* </span>    
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_3-of-12 slds-p-around_small">
+            <lightning:input type="date" required="false" name="input2" label="Date field with a predefined value"/>
+        </div>
+        <div class="slds-col slds-size_1-of-12"></div>
+        <div class="slds-col slds-size_1-of-12 slds-p-around_small ">
+            <div class="slds-text-align_left slds-p-top_xx-small">Half day</div>
+        </div>
+        <div class="slds-col slds-size_1-of-12"></div>
+        <div class="slds-col slds-size_4-of-12 slds-p-around_small">
+            <div class="slds-grid slds-p-top_xx-small">
+                <div class="slds-col slds-p-top_xx-small">
+                    <ui:inputCheckbox aura:id="checkbox" change="{!c.onCheck}"/>
+                </div>
+                <div class="slds-col gridClass">
+                    <lightning:radioGroup name="radioButtonGroupRequired"
+                                          label="Radio Button Group"
+                                          options="{! v.options }"
+                                          value="{! v.value }"
+                                          type="button"
+                                          required="true"/>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+            <div class="slds-text-align_left slds-p-top_xx-small">
+                <span>No. of Days </span>
+                <span class="Mandatory">* </span>
+            </div>
+        </div>
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small" >
+            <lightning:input name="input5" disabled="false"  label="Disabled text field with a predefined value" />
+        </div>
+        <div class="slds-col slds-size_8-of-12"></div>
+        
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+            <div class="slds-text-align_left slds-p-top_xx-small">
+                <span>Reason </span>
+            </div>
+        </div>
+        <div class="slds-col slds-size_9-of-12 slds-p-around_small" >
+            <lightning:textarea name="input1" label="Enter some text" />
+        </div>
+        <div class="slds-col slds-size_1-of-12"></div>
+        
+        
+        <div class="slds-col slds-size_2-of-12 slds-p-around_small">
+            <div class="slds-text-align_left slds-p-top_xx-small">
+                <span>Approval Authority </span>
+                <span class="Mandatory">* </span>
+            </div>
+        </div>
+        <div class="slds-col slds-size_4-of-12 slds-p-around_small" >
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="text-input-id-1">Input Label</label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                    <lightning:input
+                                     aura:id="enter-search"
+                                     name="enter-search"
+                                     label="Search when user hits the 'enter' key"
+                                     type="search"
+                                     value = "{!v.user.Manager.Name}"
+                                     />
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_6-of-12"></div>
+        
+        
+        
+        <div class="slds-col slds-size_5-of-12"></div>
+        <div class="slds-col slds-size_1-of-12 slds-p-around_small">
+            <lightning:button variant="brand" label="Send" title="Send" onclick="{!c.saveData}" />
+        </div>
+        <div class="slds-col slds-size_1-of-12 slds-p-around_small">
+            <lightning:button label="Cancel" title="Cancel" />
+        </div>
+        <div class="slds-col slds-size_5-of-12"></div>
+    </div>
+</aura:component>

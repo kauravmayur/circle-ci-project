@@ -1,0 +1,35 @@
+<template>
+<lightning-card title="contactList" icon-name="custom:custom34">
+        <div class="slds-m-around_medium">
+                <template if:true={contacts.data}>
+                        <template for:each={contacts.data} for:item="contact">
+                            
+                            <a
+                                href="#"
+                                key={contact.Id}
+                                data-contact-id={contact.Id}
+                                onclick={handleSelect}
+                            >
+                                <lightning-layout>
+                                    <!--
+                                    <lightning-layout-item>
+                                        <img src={contact.Picture__c} alt="Profile photo" />
+                                    </lightning-layout-item>
+                                    -->
+                                    <lightning-layout-item padding="horizontal-small">
+                                        <p>{contact.Name}</p>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item padding="horizontal-small">
+                                        <p>{contact.phone}</p>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item padding="horizontal-small">
+                                        <p>{contact.email}</p>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </a>
+                        </template>
+                    </template>
+        </div>
+    </lightning-card>
+
+</template>

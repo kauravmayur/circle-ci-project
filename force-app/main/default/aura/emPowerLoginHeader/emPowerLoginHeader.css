@@ -1,0 +1,4 @@
+.THIS .gradient {
+  height: 30px;
+  background-image: linear-gradient(to right, rgb(27,79,136),rgb(194,232,255), rgb(27,79,136)); /* Standard syntax (must be last) */
+}

@@ -1,0 +1,26 @@
+<apex:page controller="TestAction">
+
+  
+ <apex:form >
+     <script>
+         function callJavascript(){
+             //alert('test');
+             callController();
+         }
+     </script>
+        <apex:actionFunction name="callController" action="{!testDebug}" reRender="block"/>
+        <apex:pageBlock id="block">
+            <apex:selectList value="{!cityName}" size="1" onchange="callJavascript();">
+                <apex:selectOptions value="{!Items}" />
+                <!--<apex:actionSupport event="onchange" action="{!testDebug}" reRender="block"/>-->
+            </apex:selectList>
+            <apex:outputText value="{!cityName}"/>
+            
+            <apex:selectList value="{!cityName1}" size="1" onchange="callJavascript();">
+                <apex:selectOptions value="{!Items}" />
+                
+            </apex:selectList>
+            <apex:outputText value="{!cityName1}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

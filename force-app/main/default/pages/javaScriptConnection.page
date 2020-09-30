@@ -1,0 +1,32 @@
+<apex:page >
+    <HTML> 
+         <script src="/soap/ajax/32.0/connection.js" type="text/javascript"></script>
+          <script>
+          window.onload=getsessionid;
+          var uid = "********";
+               function getsessionid(){
+               debugger;
+               alert('hi');
+               debugger;
+               var username = "kaurav@gmail.com";
+               var password = "welcome12#8o9WQ9QhA1peqG0LSTEbKT34q"
+               var result = sforce.connection.login(username,password);
+               alert('result : '+result );
+               //var result = sforce.connection.login("kaurav@gmail.com", "welcome12#8o9WQ9QhA1peqG0LSTEbKT34q");
+               alert('result : '+result.sessionId);
+               var q = "SELECT id from user where id='"+uid+"'";
+               var u= sforce.connection.query("SELECT id,Accountid from user where id='"+uid+"'");
+               var records = u.getArray("records");
+               var Cont= sforce.connection.query("SELECT id,Account.id,Record_Type__c from Contract where Account.id='"+records[0].AccountId+"'");
+               var contra = Cont.getArray("records");
+               var contracttype = contra[0].Record_Type__c;
+               alert(contracttype);
+               
+               }
+          </script>
+        </HTML> 
+    <!--<button onclick="sayHello();">Say Hello</button>-->
+    <br/>
+    <div id="result">[Results]</div>
+
+</apex:page>

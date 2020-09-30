@@ -1,0 +1,177 @@
+<aura:component >
+    <div class="slds-p-horizontal_large">
+        <table aria-multiselectable="true" class="slds-table slds-table_bordered slds-table_fixed-layout slds-table_resizable-cols  tableClass" role="grid">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th aria-label="Leave Type" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Leave Type">Leave Type</span>
+                        </div>
+                        <div class="slds-resizable">
+                            <input type="range" aria-label="Leave Type column width" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-533" max="1000" min="20" tabindex="-1" />
+                            <span class="slds-resizable__handle">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th aria-label="Request Date" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Request Date">Request Date</span>
+                        </div>
+                        <div class="slds-resizable">
+                            <input type="range" aria-label="Request Date column width" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-534" max="1000" min="20" tabindex="-1" />
+                            <span class="slds-resizable__handle">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th aria-label="To Date" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="To Date">To Date</span>
+                        </div>
+                        <div class="slds-resizable">
+                            <input type="range" aria-label="To Date column width" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-535" max="1000" min="20" tabindex="-1" />
+                            <span class="slds-resizable__handle">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th aria-label="Floating Holiday Date" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Floating Holiday Date">Floating Holiday Date</span>
+                        </div>
+                        <div class="slds-resizable">
+                            <input type="range" aria-label="Floating Holiday Date column width" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-536" max="1000" min="20" tabindex="-1" />
+                            <span class="slds-resizable__handle">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th aria-label="No of Days" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="No of Days">No of Days</span>
+                        </div>
+                        <div class="slds-resizable">
+                            <input type="range" aria-label="No of Days column width" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-537" max="1000" min="20" tabindex="-1" />
+                            <span class="slds-resizable__handle">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th aria-label="Approval Authority" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Approval Authority">Approval Authority</span>
+                        </div>
+                        <div class="slds-resizable">
+                            <input type="range" aria-label="Approval Authority column width" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-538" max="1000" min="20" tabindex="-1" />
+                            <span class="slds-resizable__handle">
+                                <span class="slds-resizable__divider"></span>
+                            </span>
+                        </div>
+                    </th>
+                    <th class="" scope="col" style="width:3.25rem">
+                        <div class="slds-truncate slds-assistive-text" title="Actions">Actions</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr aria-selected="false" class="slds-hint-parent">
+                    <!--
+                    <th class="slds-truncate" scope="row" tabindex="0">
+                        <div class="slds-truncate" title="Earned Leave">
+                            Earned Leave
+                        </div>
+                    </th>
+					-->
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="24-Jun-2020">24-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="08-Jun-2020">08-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="08-Jun-2020">08-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" ></div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="1">	1</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="Syed Shadab Sajid - 9806">Syed Shadab Sajid - 9806</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="Cancel">
+                            <a href="javascript:void(0);" tabindex="-1">Cancel</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr aria-selected="false" class="slds-hint-parent">
+                    <!--
+                    <th class="slds-truncate" scope="row" tabindex="0">
+                        <div class="slds-truncate" title="Earned Leave">
+                            Earned Leave
+                        </div>
+                    </th>
+					-->
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="24-Jun-2020">24-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="08-Jun-2020">08-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="08-Jun-2020">08-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" ></div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="1">	1</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="Syed Shadab Sajid - 9806">Syed Shadab Sajid - 9806</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="Cancel">
+                            <a href="javascript:void(0);" tabindex="-1">Cancel</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr aria-selected="false" class="slds-hint-parent">
+                    <!--
+                    <th class="slds-truncate" scope="row" tabindex="0">
+                        <div class="slds-truncate" title="Earned Leave">
+                            Earned Leave
+                        </div>
+                    </th>
+					-->
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="24-Jun-2020">24-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="08-Jun-2020">08-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="08-Jun-2020">08-Jun-2020</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" ></div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="1">	1</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="Syed Shadab Sajid - 9806">Syed Shadab Sajid - 9806</div>
+                    </td>
+                    <td role="gridcell">
+                        <div class="slds-truncate" title="Cancel">
+                            <a href="javascript:void(0);" tabindex="-1">Cancel</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</aura:component>

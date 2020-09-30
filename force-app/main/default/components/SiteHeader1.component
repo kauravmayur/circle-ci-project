@@ -1,0 +1,4 @@
+<apex:component >
+    <apex:outputText value="This is header of website"/><br/>
+    <apex:outputText value="You can enter more details here"/>
+</apex:component>

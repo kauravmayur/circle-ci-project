@@ -1,0 +1,12 @@
+<apex:page controller="dynamicsObject">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:outputLabel value="Object Name"/>
+            <apex:inputText value="{!sObjectName}"/>
+            <apex:commandButton value="showFields" action="{!showFields}"/>
+            <apex:dataList value="{!fieldsName}" var="field">
+                <apex:outputText value="{!field}"/>
+            </apex:dataList>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

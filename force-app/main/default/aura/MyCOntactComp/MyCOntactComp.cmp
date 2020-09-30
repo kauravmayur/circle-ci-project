@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:handler name="init" action="{!c.getContactsList}" value="{!this}"/>
+    <!--https://www.youtube.com/watch?v=bTqsan5fsjc&t=2207s-->
+</aura:component>

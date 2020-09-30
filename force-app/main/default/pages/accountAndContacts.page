@@ -1,0 +1,21 @@
+<apex:page controller="updateAccountDetails">
+    <apex:form >
+        <apex:pageBlock >
+        
+            <table>
+                <apex:repeat value="{!Accounts}" var="a">
+                    <tr>
+                        <td>
+                            <apex:outputText value="{!a.name}"/>
+                        </td>
+                        <apex:repeat value="{!contactMap[a.Id]}" var="c">
+                        <td>
+                            <apex:outputText value="{!c.Name}"/>
+                        </td>
+                        </apex:repeat>
+                    </tr>
+                </apex:repeat>
+            </table>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,58 @@
+<apex:page controller="MyController" tabStyle="Account" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!accounts}" var="account" rendered="false">
+
+            <apex:column value="{!account.name}" headerValue="Name"/>
+            <apex:column value="{!account.owner.name}" headerValue="Owner Name"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock rendered="false">
+        
+        <apex:dataTable value="{!accounts}" var="account" id="theTable"
+            rowClasses="odd,even" styleClass="tableClass">
+            <apex:facet name="caption">table caption</apex:facet>
+            <apex:facet name="header">table header</apex:facet>
+            <apex:facet name="footer">table footer</apex:facet>
+    
+            <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:facet name="footer">column footer</apex:facet>
+                <apex:outputText value="{!account.name}"/>
+            </apex:column>
+    
+            <apex:column >
+                <apex:facet name="header">Owner</apex:facet>
+                <apex:facet name="footer">column footer</apex:facet>
+                <apex:outputText value="{!account.owner.name}"/>
+            </apex:column>
+    
+        </apex:dataTable>
+    </apex:pageBlock>
+    <!--<apex:pageMessages />-->
+  
+        <apex:pageBlock id="refresh" rendered="true">
+        <apex:pageMessage detail="{!error}" severity="error"/>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}" reRender="refresh" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!account.name}"/>
+                <apex:inputField value="{!account.NumberOfEmployees}"/>
+                <apex:inputField value="{!account.Ownership}">
+                    <apex:actionSupport event="onchange" action="{!hideInputText}"/>
+                </apex:inputField>
+                <apex:inputField value="{!account.Annualrevenue}" rendered="{!inputText}"/>
+            </apex:pageBlockSection>
+       
+        </apex:pageBlock>
+        <apex:pageBlock rendered="false" id="block2">
+        <apex:commandButton value="Save" action="{!Save}"/>
+        <apex:outputText value="{!selectedItems}"/>
+            <apex:selectList value="{!selectedItems}"  size="1" onchange="{!Save}">
+                <apex:selectOptions value="{!items}" />
+            </apex:selectList>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

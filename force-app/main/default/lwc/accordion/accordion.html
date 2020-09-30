@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Account List" icon-name="custom:custom34">
+        <p class="slds-text-heading_small">{activeSessionMessage}</p>
+
+        
+        <lightning-accordion class="example-accordion" onsectiontoggle={handleToggleSection} >
+            <template if:true={accounts}>
+                <template for:each={accounts} for:item="dataObj">
+                    <lightning-accordion-section  name={dataObj.Name} label={dataObj.Name} key={dataObj.Id}>
+                        <template for:each={dataObj.Contacts} for:item="contact">
+                            <lightning-accordion-section  name={contact.Name} label={contact.Name} key={contact.Id}>
+                                {contact.Name}
+                            </lightning-accordion-section>
+                        </template>
+                    </lightning-accordion-section>
+                </template>
+            </template>
+                
+            
+        </lightning-accordion>
+    </lightning-card>
+</template>

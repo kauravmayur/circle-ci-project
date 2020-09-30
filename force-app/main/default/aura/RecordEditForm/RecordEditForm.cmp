@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <lightning:recordEditForm objectApiName="Account"
+                              aura:id="accForm"                                              
+                              onload="{!c.handleOnLoad}"
+                              onsubmit="{!c.handleOnSubmit}"
+                              onsuccess="{!c.handleOnSuccess}"
+                              onerror="{!c.handleOnError}">
+        <lightning:messages aura:id="OppMessage"/>
+        <lightning:inputField aura:id="field" fieldName="Name" />
+        <lightning:inputField aura:id="field" fieldName="AnnualRevenue" />
+        <div class="slds-form-element__help slds-text-color_error" style="display:none" aura:id="annualRevenue">The field 'Annual Revenue' cannot be empty!</div>
+        <lightning:inputField aura:id="field" fieldName="AccountNumber" />
+        <div class="slds-form-element__help slds-text-color_error" style="display:none" aura:id="accountNumber">The field 'Account Number' cannot be empty!</div>
+        <div class="slds-m-top_medium">
+            <lightning:button label="Cancel" onclick="{!c.handleReset}" />
+            <lightning:button type="submit" label="Save Record" />
+        </div>
+    </lightning:recordEditForm>
+</aura:component>

@@ -1,0 +1,31 @@
+<apex:page >
+
+<!--
+{!REQUIRESCRIPT("/soap/ajax/39.0/connection.js")} 
+{!REQUIRESCRIPT("/soap/ajax/39.0/apex.js")} 
+
+var resp = sforce.apex.execute( 
+    "EinsteinServices", 
+    "findSentiment", 
+    { 
+        "text" : "{!Task.Description}" 
+    } 
+); 
+-->
+window[ resp[0].probabilities[0].label ] = resp[0].probabilities[0].probability; 
+window[ resp[0].probabilities[1].label ] = resp[0].probabilities[1].probability; 
+window[ resp[0].probabilities[2].label ] = resp[0].probabilities[2].probability; 
+
+var result = ""; 
+if( negative > positive AND negative > neutral ) { 
+    result = "Negative"; 
+} 
+else if( positive > negative AND positive > neutral ) { 
+    result = "Positive"; 
+} 
+else { 
+    result = "Neutral"; 
+} 
+
+alert( result );
+</apex:page>

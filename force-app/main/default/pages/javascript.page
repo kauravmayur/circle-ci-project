@@ -1,0 +1,21 @@
+<apex:page >
+    <script src="/soap/ajax/29.0/connection.js" type="text/javascript"></script>
+    <script src="/soap/ajax/29.0/apex.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+
+        function sayHello() {
+        debugger;
+            var result = sforce.connection.login('kaurav@gmail.com', 'welcome12#8o9WQ9QhA1peqG0LSTEbKT34q', 'login');
+            //var result = sforce.connection.login('kaurav@gmail.com', 'welcome12#',security_token='8o9WQ9QhA1peqG0LSTEbKT34q', sandbox=false);
+            
+            console.log('logged in with session id ' + result.sessionId);
+        }
+
+    </script>
+
+    <button onclick="sayHello();">Say Hello</button>
+    <br/>
+    <div id="result">[Results]</div>
+
+</apex:page>

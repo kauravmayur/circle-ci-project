@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="staticResource" type="string" default="testIcon"/>
+    <img src="{!$Resource.testIcon}" style="width: 3rem;height: 3rem;border-radius: .25rem;"/>
+    <img src="{!$Resource.testIcon2}" style="width: 2rem;height: 2rem;border-radius: 1.5rem;"/>
+    <img src="{!'/resource/'+v.staticResource}" style="width: 2rem;height: 2rem;border-radius: 1.5rem;"/>
+    <img src="{!$Resource.testIcon2}" style="size:x-small;width: 3rem;height: 3rem;border-radius: .25rem;"/>
+    <lightning:icon iconName="custom:custom88" title="custom88" />
+    <!--
+    <lightning:icon iconName="standard:account" alternativeText="My Custom Icon" />
+    <lightning:icon src="{! $Resource.sldv1+ '/assets/icons/standard-sprite/svg/symbols.svg#contact'}" alternativeText="My Custom Icon" />
+    <lightning:icon src="{! $Resource.sldv1+ '/assets/icons/standard-sprite/svg/symbols.svg#account'}" alternativeText="My Custom Icon" />
+    <lightning:icon src="/resource/sldv1/assets/icons/action/approval_120.png" alternativeText="My Custom Icon" />
+    -->
+</aura:component>

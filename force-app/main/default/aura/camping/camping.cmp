@@ -1,0 +1,9 @@
+<aura:component >
+    <!--<c:hellomessage message="You look nice today."/>-->
+    <!--<c:hellomessage expense="{'sObjectType':'Expense__c', 'Amount__c':1055, 'Client__c':'test Client', 'Reimbursed__c':false}"/>-->
+    <c:helloMessageIteration messages="'You look nice today.',
+            'Great weather we\'re having.',
+            'How are you?'"/>
+    <c:campingHeader/>
+    <c:campingList/>
+</aura:component>
