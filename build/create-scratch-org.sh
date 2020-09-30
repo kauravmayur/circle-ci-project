@@ -3,7 +3,8 @@ echo "Setting up DevHub Connection..."
 mkdir keys
 #openssl version
 #openssl aes-256-cbc -salt -a -d -in assets/server.key.enc -out assets/server.key -k $SERVER_KEY_PASSWORD
-echo $SFDC_SERVER_KEY | base64 -di > keys/server.key
+#echo $SFDC_SERVER_KEY | base64 -di > keys/server.key
+echo $SFDC_SERVER_KEY > keys/server.key
 
 # Authenticate to salesforce 
 echo "Authenticating..."
