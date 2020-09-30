@@ -12,6 +12,7 @@ global class AccountDetailsByRestApi{
     @HttpPost
     global static List<account> updateAccount(){
         //RestRequest req = RestContext.request;
+        
         //RestResponse res = RestContext.response;
         //id accountid = req.requestURI.substring(req.requestURI.lastIndexOf('/')+1);
         RestRequest req = RestContext.request;
